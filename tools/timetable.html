@@ -1,1 +1,61 @@
-<!doctype html><html><body><h1>Timetable Tool</h1><textarea></textarea></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Timetable HTML Generator</title>
+<link rel="stylesheet" href="../assets/style.css" />
+<style>
+  .io{display:grid;gap:12px}
+  textarea{width:100%;min-height:220px;font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace}
+  .out{white-space:pre-wrap;background:#fff;border:1px solid var(--border);padding:12px;border-radius:10px}
+</style>
+</head>
+<body class="container">
+  <h1>Timetable HTML Generator</h1>
+  <p class="muted">Paste your JSON on the left, get HTML markup for the Program page on the right.</p>
+  <div class="io">
+    <label>
+      <strong>JSON</strong>
+      <textarea id="json"></textarea>
+    </label>
+    <button class="btn" id="convert">Convert to HTML</button>
+    <label>
+      <strong>HTML Output</strong>
+      <textarea id="html" class="out" readonly></textarea>
+    </label>
+  </div>
+  <script>
+    const $ = sel => document.querySelector(sel);
+    $('#convert').addEventListener('click', () => {
+      try{
+        const data = JSON.parse($('#json').value);
+        $('#html').value = buildHtml(data);
+      }catch(e){
+        $('#html').value = '❌ Invalid JSON: ' + e.message;
+      }
+    });
+
+    function esc(s){
+      return String(s ?? '')
+        .replaceAll('&','&amp;').replaceAll('<','&lt;')
+        .replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'","&#039;");
+    }
+
+    function buildHtml(program){
+      let out = '';
+      (program.days || []).forEach(day => {
+        const dateFmt = new Date(day.date).toLocaleDateString(undefined,{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+        out += `<section class="program-day card">\n<h2>${dateFmt}${day.venue ? ` · <span class="muted">${esc(day.venue)}</span>`:''}</h2>\n<div class="sessions">\n`;
+        (day.sessions||[]).forEach(s=>{
+          const badges = [s.type, s.location].filter(Boolean).map(x=>`<span class="badge">${esc(x)}</span>`).join('');
+          const slides = s.slidesLink ? ` · <a href="${s.slidesLink}" target="_blank" rel="noopener">Slides</a>` : '';
+          out += `<article class="session">\n<div class="time">${esc(s.start)}–${esc(s.end)}</div>\n<div>\n<h3 class="title">${esc(s.title)}</h3>\n<div class="meta">${s.speaker?esc(s.speaker):''}${s.affiliation?`, ${esc(s.affiliation)}`:''}${slides}</div>\n<div class="badges">${badges}</div>\n</div>\n</article>\n`;
+        });
+        out += `</div>\n</section>\n\n`;
+      });
+      return out.trim();
+    }
+  </script>
+</body>
+</html>
