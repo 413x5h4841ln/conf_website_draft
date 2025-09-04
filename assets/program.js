@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{fetch('data/program-2025.json').then(r=>r.json()).then(d=>{document.getElementById('program-root').innerText=JSON.stringify(d,null,2);});});
