@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News on My New Hugo Site</title>
-    <link>http://example.org/news/</link>
+    <link>https://413x5h4841ln.github.io/conf_website_draft/news/</link>
     <description>Recent content in News on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/news/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://413x5h4841ln.github.io/conf_website_draft/news/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
