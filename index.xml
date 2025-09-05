@@ -1,38 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Acme on My New Hugo Site</title>
-    <link>http://example.org/</link>
-    <description>Recent content in Acme on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Archive</title>
-      <link>http://example.org/archive/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/archive/</guid>
-      <description>Coming soon.</description>
-    </item>
-    
-    <item>
-      <title>Contact</title>
-      <link>http://example.org/contact/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/contact/</guid>
-      <description>Address: Oskar Morgenstern Platz 1, Conference room 14
-Social: (Instagram: https://www.instagram.com/statisticon/ WhatsApp: https://chat.whatsapp.com/CuiRUZvYS1Z7LqKV7f4lTu )</description>
-    </item>
-    
-    <item>
-      <title>Timetable</title>
-      <link>http://example.org/timetable/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://example.org/timetable/</guid>
-      <description>Browse the full schedule below. Wed, 24 Sep 2025TimeSpeakerTopic09:00-09:30-Introduction09:30-10:30Georg KöstenbergerIntroduction to basic concepts of timeseries analysis10:45-11:45Daniel PeerIntuitive aspects of linear algebra12:00-13:45-Lunch14:00-14:45Tracy NdongalaOn the Kullback-Leiber-Divergence and it&amp;#39;s statistical applications15:00-15:30Laetitia Fritz, Sarah Dvorak, Aruuke YdrysovaRegression to the Data: Students on Non-Parametric RegressionThu, 25 Sep 2025TimeSpeakerTopic09:30-10:30Razvan-Andrei MorariuStatistical methods can outperform complex machine learning10:45-11:45Daniel ObszelkaÜberblick über Monte-Carlo Simulations- und Samplingtechniken12:00-13:45-Lunch14:00-14:30Lorenzo SalviIntroduction to the Jackknife and Bootstrap Methods14:45-15:15Lorenzo SalviIntroduction to Survival Analysis15:30-18:00PanelNetworking EventFri, 26 Sep 2025TimeSpeakerTopic10:00-11:00Daniel ObszelkaÜberblick über Monte-Carlo Simulations- und Samplingtechniken11:15-12:15Luca GonzatoIntroduction to Bayesian filtering and state-space models12:30-13:00Tihomir TodorovApplication of Statistical Methods in Text Classification14:45-15:15Lorenz MatzYou may peek at the data now: Anytime-Valid Inference and Safe Statistics13:55-18:00-Lunch/Discussion/Excursion</description>
-    </item>
-    
-  </channel>
-</rss>
