@@ -1,0 +1,38 @@
+<section id="timetable" class="timetable-section">
+  {{/* Removed .Title check to avoid undefined errors */}}
+
+  {{ $days := sort .Site.Data.timetable "date" }}
+  {{ if gt (len $days) 0 }}
+    {{ range $d := $days }}
+      <h2 class="timetable-day">
+        <time datetime="{{ $d.date }}">{{ (time $d.date).Format "Mon, 02 Jan 2006" }}</time>
+      </h2>
+      <div class="table-wrap">
+        <table class="timetable">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Speaker</th>
+              <th>Topic</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{ if $d.sessions }}
+              {{ range $s := $d.sessions }}
+                <tr>
+                  <td>{{ $s.slot }}</td>
+                  <td>{{ $s.speaker }}</td>
+                  <td>{{ $s.topic }}</td>
+                </tr>
+              {{ end }}
+            {{ else }}
+              <tr><td colspan="3">Schedule coming soon.</td></tr>
+            {{ end }}
+          </tbody>
+        </table>
+      </div>
+    {{ end }}
+  {{ else }}
+    <p>Schedule coming soon.</p>
+  {{ end }}
+</section>

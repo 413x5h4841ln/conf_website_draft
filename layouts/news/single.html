@@ -1,0 +1,11 @@
+{{ define "main" }}
+<main class="container">
+  <article class="prose">
+    <h1>{{ .Title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ .Date }}">{{ .Date.Format "02 Jan 2006" }}</time>{{ with .Params.author }} · {{ . }}{{ end }}
+    </p>
+    {{ .Content }}
+  </article>
+</main>
+{{ end }}
