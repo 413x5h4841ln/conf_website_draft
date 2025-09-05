@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on My New Hugo Site</title>
+    <title>Categories on StatistiCon Conference</title>
     <link>https://413x5h4841ln.github.io/conf_website_draft/categories/</link>
-    <description>Recent content in Categories on My New Hugo Site</description>
+    <description>Recent content in Categories on StatistiCon Conference</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://413x5h4841ln.github.io/conf_website_draft/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
